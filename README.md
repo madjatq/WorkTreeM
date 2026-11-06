@@ -1,8 +1,10 @@
 # Git WorkTree 协作演示  曲晓
 
-文档版本：v0.2
+文档版本：v0.4
 适用对象：演示参与者
 目的：用少量 Markdown 文件演示 WorkTree 创建、并行开发、推送、合并、拉取和冲突处理。
+
+团队日常开发请阅读：[小组开发规范简版：组员与组长](docs/team-development-short.md)；需要完整说明时阅读：[小组开发规范：VS Code + Codex，本地验证版](docs/team-development-standard.md)。流程以本地验证为主，不配置 GitHub Actions。
 
 ## 演示内容
 
@@ -18,7 +20,9 @@
 
 ## 初始化远端
 
-先在本地创建并提交本 README。若当前分支不是 `main`，先将它改名：
+以下初始化步骤只用于新建的 WorkTree 练习仓库。不要在已有项目克隆中照做；如果 `main` 已存在，不要重命名分支。
+
+在新建的练习仓库中，先提交本 README。若当前初始分支不是 `main`，再将它改名：
 
 ```bash
 git add README.md                         # 将 README.md 加入暂存区
@@ -57,7 +61,7 @@ git commit -m "Add activity brief"               # 提交活动简介文件
 git push -u origin feature/brief                 # 推送 Alice 的分支并设置默认关联
 ```
 
-其他人替换为自己的文件名、提交说明和分支名。随后每个人在 GitHub 上创建一个指向 `main` 的 Pull Request；依次合并三个 PR，展示多人分支汇入主分支的过程。
+其他人替换为自己的文件名、提交说明和分支名。以下直接合入 `main` 仅用于 WorkTree 演示；日常开发应按团队规范把任务 PR 提交到 `develop`，再由组长审核合并。演示时，每个人在 GitHub 上创建一个指向 `main` 的 Pull Request；依次合并三个 PR，展示多人分支汇入主分支的过程。
 
 合并后，在主工作目录更新本地 `main`：
 
@@ -112,3 +116,5 @@ git worktree prune                      # 清理已失效的 WorkTree 登记信�
 |---|---|
 | v0.1 | 创建 WorkTree 多人协作演示说明 |
 | v0.2 | 将示例文件创建步骤改为自然语言，并为 Git 命令补充作用注释 |
+| v0.3 | 增加小组日常开发规范入口，明确直接合入 main 只用于演示，并提醒不要在已有项目克隆中重命名分支 |
+| v0.4 | 增加只面向组员和组长的简版日常开发流程入口 |
