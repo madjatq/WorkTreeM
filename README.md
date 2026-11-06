@@ -1,4 +1,4 @@
-# Git WorkTree 协作演示
+# Git WorkTree 协作演示  曲晓
 
 文档版本：v0.2
 适用对象：演示参与者
